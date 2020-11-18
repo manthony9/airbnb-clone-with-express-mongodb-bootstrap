@@ -4,8 +4,8 @@ var path    = require("path");
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 //const Sequelize = require('sequelize');
-var mongoose = require("mongoose");
-var Schema = mongoose.Schema;
+//var mongoose = require("mongoose");
+//var Schema = mongoose.Schema;
 
 
  app.use(express.static("./public"));
@@ -46,7 +46,7 @@ app.listen(port);
 console.log('Listening on port ',  port);
 
 
-
+/*
 
 mongoose.connect("mongodb://localhost/web322_assign2");
 
@@ -103,3 +103,4 @@ user1.save((err) => {
       });
   }   
 });
+*/
