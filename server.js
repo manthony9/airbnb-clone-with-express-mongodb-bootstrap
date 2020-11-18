@@ -38,20 +38,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
  });
 
- //app.post("/dashboard", (req,res)=>{
- //    res.sendFile(path.join(__dirname, "/public/nhtml/dashboard.html"))
+app.post("/dashboard", (req,res)=>{
+    res.sendFile(path.join(__dirname, "/public/nhtml/dashboard.html"))
 
- //}); 
+}); 
 
- router.post("/register",(req,res)=>{
+// router.post("/register", function (req,res){
 
-  db.addUser(req.body).then(()=>{
+//   db.addUser(req.body);
 
-    res.redirect("/register");
-
-  });
-
- });
+//  });
 
 var port = process.env.PORT || 5000;
 app.listen(port);
