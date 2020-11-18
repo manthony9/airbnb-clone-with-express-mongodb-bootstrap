@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/login.css">
+   </head>
+   <body>
+      <div class="navbar">
+         <a href="/">Home</a>
+         <a href="/nlisting">Listings</a>
+         <a href="/nreg">Register</a>
+         <a id="Login"href="/nlogin">Login</a>
+      </div>
+      <div id="Section1">
+         <header>
+            <h1>AirB&B</h1>
+         </header>
+         <button id="butt" onclick="document.getElementById('id01').style.display='block'">Login</button>
+         <div id="id01" class="modal">
+            <form name="myForm" id= "myForm" class="modal-content animate" action="/dashboard" method="POST">
+               <div class="imgcontainer">
+                  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+               </div>
+               <div class="container">
+                  <label for="uname"><b>Username</b><span id="error-username"></span></label>
+                  <input type="text" placeholder="Enter Username" name="uname" minlength="1" pattern="([^\s][A-z0-9À-ž\s]+)" required>
+                  <label for="psw"><b>Password</b><span id="error-password"></span></label>
+                  <input type="password" placeholder="Enter Password" name="psw" minlength="1" pattern="([^\s][A-z0-9À-ž\s]+)" required>
+                  <button type="submit">Login</button>
+                  <label>
+                  <input type="checkbox" checked="checked" name="remember"> Remember me
+                  </label>
+               </div>
+               <div class="container" style="background-color:#f1f1f1">
+                  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                  <span class="psw">Forgot <a href="#">password?</a></span>
+               </div>
+            </form>
+         </div>
+      </div>
+      </div>
+      <div id="Section2">
+         <h1 id="sec2h1">Promotions</h1>
+         <div id="empty1"></div>
+         <div id="promoCard1">
+            <div id="img1"><img src="images/pexels-photo-386009.jpeg"  width="500" height="300"></div>
+            <div id="cardBody">
+              <div id="title1">Discounts on Selected Destinations</div>
+              <div id="desc1">Cool offers on selected destinations.Offer available until end of year</div>
+            </div>
+         </div>
+         <div id="promoCard2">
+            <div id="img1"><img src="images/pexels-aleksandar-pasaric-1285625.jpg"  width="500" height="300"></div>
+            <div id="cardBody">
+              <div id="title1">Discounts on Selected Destinations</div>
+              <div id="desc1">Cool offers on selected destinations.Offer available until end of year</div>
+            </div>
+         </div>
+         <div id="promoCard3">
+            <div id="img1"><img src="images/pexels-jimmy-teoh-1010657.jpg"  width="500" height="300"></div>
+            <div id="cardBody">
+              <div id="title1">Discounts on Selected Destinations</div>
+              <div id="desc1">Cool offers on selected destinations.Offer available until end of year</div>
+            </div>
+         </div>
+         <div id="empty2"></div>
+      </div>
+      <div id="Section3">
+         <h1 id="sec3h1">About Us</h1>
+         <div id="empty1"></div>
+         <div id="infoCard1">
+            <div id="infoimg1"><img src="images/pexels-visionpic-net-2082949.jpg"  width="500" height="300"></div>
+            <div id="infocardBody">
+              <div id="infotitle1">Best in class service</div>
+              <div id="infodesc1">We serve our customers with the highest standard of customer service and guaranteed satisfaction. Checkout more details in the about us section or contact us for more information</div>
+            </div>
+         </div>
+         <div id="infoCard2">
+            <div id="infoimg1"><img src="images/pexels-mike-andrei-1271619.jpg"  width="500" height="300"></div>
+            <div id="infocardBody">
+              <div id="infotitle2">Best in class service</div>
+              <div id="infodesc2">We serve our customers with the highest standard of customer service and guaranteed satisfaction.</div>
+            </div>
+         </div>
+         <div id="infoCard3">
+            <div id="infoimg1"><img src="images/pexels-pixabay-258136.jpg"  width="500" height="300"></div>
+            <div id="infocardBody">
+              <div id="infotitle2">Best in class service</div>
+              <div id="infodesc2">We serve our customers with the highest standard of customer service and guaranteed satisfaction.</div>
+            </div>
+         </div>
+         <div id="empty2"></div>
+      </div>
+      <footer>
+         <ul id="flista">
+            <li> Contact Us </li>
+            <li> Home </li>
+            <li> Listings </li>
+            <a href="https://www.facebook.com"><img src="images/fb1.svg" alt="facebook" style="width:50px;height:50px;"></a>
+         </ul>
+         <ul id="flistb">
+            <li> About Us </li>
+            <li> Register </li>
+            <li> Login </li>
+            <a href="https://www.instagram.com"><img src="images/ins.svg" alt="instagram" style="width:50px;height:50px;"></a> 
+         </ul>
+         <ul id="flistc">
+            <li> Careers </li>
+            <li> Legal </li>
+            <li> Mission </li>
+            <a href="https://www.twitter.com"><img src="images/twi.png" alt="twitter" style="width:50px;height:50px;"></a>
+         </ul>
+      </footer>
+      <script src="JS/reg.js"></script>
+   </body>
+</html>

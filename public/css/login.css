@@ -1,0 +1,593 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+    
+  body {
+         width: 100%;
+    }
+
+    
+    #book{
+
+        
+        min-width:100px;
+        min-height:50px;
+
+    }
+
+
+}
+
+  *{
+    font-family: 'Roboto Slab', serif;
+    box-sizing: border-box;
+  }
+
+body {
+    
+    font-family: Arial, Helvetica, sans-serif;
+    display:grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-gap: 0px;
+    grid-auto-rows: 70px 850px 550px 1100px 350px;
+    
+  }
+  
+  .navbar {
+    overflow: hidden;
+    background-color:#de4847;
+    grid-row:1;
+    grid-column: 1/7;
+    display:grid;
+    grid-template-columns: 100px 100px 100px 600px 600px 600px;
+    grid-template-rows: subgrid;
+    min-width:190vh;
+  }
+  
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    padding: 24px 16px;
+    text-decoration: none;
+
+  }
+  
+  #title1{
+
+
+    color:#333;
+    font-size: 17px;
+    
+  
+  }
+  
+  #desc1{
+  
+    color:#333;
+    font-size: 16px;
+  
+  }
+
+  #Section1{
+      grid-row:2;
+      grid-column: 1/7;
+      display:grid;
+      grid-template-columns: repeat(5,1fr);
+      grid-template-rows: 100px 100px 550px;
+      background-image: url("/images/pexels-emre-can-2079228\ \(1\).jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;  
+      min-width:190vh;
+  }
+
+  #login{
+
+      height:50%;
+      grid-row:3;
+      grid-column:3;
+      background-color: white;
+      border-radius: 30px;
+      width:100%;
+      box-shadow: 3px 3px 3px #333;
+      transition: all 300ms ease;
+      
+  }  
+ 
+ #login:hover {
+   transform: translateY(-10px);
+   cursor: pointer;
+ }
+
+
+
+ /*form css begins*/
+
+ input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    grid-row:2;
+    grid-column:3;
+    width:20%;
+    height:50%;
+    border-radius:30px;
+    color:#333;
+    font-size: 1.5em;
+    cursor: pointer;
+    border:solid 3px #333;
+    margin-left:0;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  /* Extra styles for the cancel button */
+  .cancelbtn {
+    width: 25%;
+    height:20%; 
+    margin:auto;
+  }
+  
+  /* Center the image and position the close button */
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+  }
+  
+  
+  .container {
+    padding: 16px;
+  }
+  
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 40px;
+    display: block;
+    text-align: center;
+    margin:auto;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+
+    background-color: #fefefe;
+     /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    border-radius:15px;
+    display:inline-block;
+    width: 25%; /* Could be more or less, depending on screen size */
+    min-height:275px;
+    text-align: left;  
+}
+
+
+  
+  /* The Close Button (x) */
+  .close {
+
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+  
+#butt{
+
+  width:50%;
+  margin:auto;
+
+}
+
+  /* Add Zoom Animation */
+  .animate {
+
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+  }
+
+/*form css ends*/
+
+#book{
+
+    grid-row:2;
+    grid-column:3;
+    width:30%;
+    height:50%;
+    border-radius:30px;
+    color:#333;
+    font-size: 1.5em;
+    cursor: pointer;
+    border:solid 3px #333;
+    margin-left:35%;
+    
+}
+
+header{
+    grid-row: 1;
+    grid-column: 3;
+    font-size: 2em;
+    min-width:300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+}
+
+
+#Section2{
+    grid-row:3;
+    grid-column: 1/7;
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: 100px 400px ;
+    grid-gap:20px;
+    height:550px;
+    min-width:190vh;
+    max-width:1000vh;
+
+}
+
+#sec2h1{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: 1;
+    grid-column: 3;
+    
+}
+
+#empty1{
+
+    grid-row: 2;
+    grid-column: 1;
+    width:5%;
+}
+
+
+
+#promoCard1{
+    
+    grid-row: 2;
+   
+    grid-column: 2;
+    width:100%;
+    border-radius:35px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px #333;
+    transition: all 300ms ease;
+    
+}
+
+#promoCard1:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+#cardBody{
+
+  padding: 20px;
+
+}
+
+
+#img1 img{
+border-radius:10px;
+width:100%;
+
+}
+
+#promoCard2{
+
+    grid-row: 2;
+    grid-column: 3;
+    width:100%;
+    border-radius:35px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px #333;
+    transition: all 300ms ease;
+    
+}
+
+#promoCard2:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+
+#promoCard3{
+
+    grid-row: 2;
+    grid-column:4;
+    width:100%;
+    border-radius:35px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px #333;
+    transition: all 300ms ease;
+    
+}
+
+#promoCard3:hover {
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
+
+
+
+#infocardBody{
+
+  padding: 20px;
+
+}
+
+#infoimg1 img{
+  border-radius:10px;
+  width:100%;
+  object-fit: cover;
+  
+
+} 
+
+
+#infoCard1{
+    
+  grid-row: 2;
+  grid-column: 3/5;
+  width:100%;
+  border-radius:35px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 3px 3px 3px #333;
+  transition: all 300ms ease;
+  
+
+  
+}
+
+#infoCard1:hover {
+transform: translateY(-10px);
+cursor: pointer;
+}
+
+
+#infoCard2{
+    
+  grid-row: 3;
+  grid-column: 3;
+  width:100%;
+  border-radius:35px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 3px 3px 3px #333;
+  transition: all 300ms ease;
+  max-height:400px;
+  
+}
+
+#infoCard2:hover {
+transform: translateY(-10px);
+cursor: pointer;
+}
+
+
+#infoCard3{
+    
+  grid-row: 3;
+ 
+  grid-column: 4;
+  width:100%;
+  border-radius:35px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 3px 3px 3px #333;
+  transition: all 300ms ease;
+  max-height:400px
+}
+
+#infoCard3:hover {
+transform: translateY(-10px);
+cursor: pointer;
+}
+
+#empty2{
+
+    grid-row: 2;
+    grid-column: 5;
+    width:5%;
+}
+
+#Section3{
+    grid-row:4;
+    grid-column: 1/7;
+    display:grid;
+    /*grid-template-columns: 250px 250px 800px 450px 250px;*/
+    grid-template-columns:1fr 1fr 3fr 3fr 1fr 1fr;
+    grid-template-rows: 75px 400px ;
+    grid-gap:20px;
+    height:1100px;
+    background-color: #2d3436;
+    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+    min-width:190vh;
+    max-width:1000vh;
+}
+
+#sec3h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: 1;
+    grid-column: 3;
+    color:white;
+    margin-left:70%;
+    
+  
+}
+
+
+#fh1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: 1;
+    grid-column: 3;
+    
+    
+  
+}
+
+
+footer{
+  background-color:#e5e5e5;
+  border-top:1px solid lightgrey; 
+  grid-row:5;
+  grid-column: 1/7;
+  min-width:190vh;
+  max-width:1000vh;
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(3,1fr);
+} 
+
+
+#flista{
+
+color:darkgray;
+font-size: 2ch;
+list-style-type: none;
+grid-column:2;
+grid-row:2;
+transition: all 300ms ease;
+
+
+
+}
+
+#flista li{
+
+margin: 15px 0;
+
+}
+
+#flista:hover{
+
+color:black;
+cursor: pointer;
+
+}
+
+
+#flistb{
+
+color:darkgray;
+font-size: 2ch;
+list-style-type: none;
+grid-column:3;
+grid-row:2;
+transition: all 300ms ease;
+
+
+
+}
+
+#flistb li{
+
+margin: 15px 0;
+
+}
+
+#flistb:hover{
+
+color:black;
+cursor: pointer;
+
+}
+
+
+#flistc{
+
+color:darkgray;
+font-size: 2ch;
+list-style-type: none;
+grid-column:4;
+grid-row:2;
+transition: all 300ms ease;
+
+
+
+}
+
+#flistc li{
+
+margin: 15px 0;
+
+}
+
+#flistc:hover{
+
+color:black;
+cursor: pointer;
+
+}
+
