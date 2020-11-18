@@ -49,11 +49,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
     res.redirect("/register");
 
-  }).catch((err)=>{
-
-    console.log("Error!");
-    res.redirect("/register")
-
   });
 
  });
