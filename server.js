@@ -1,11 +1,13 @@
 var express = require('express');
 var app     = express();
 var path    = require("path");
+var router = express.Router();
 const bodyParser = require('body-parser');
+const db = require('./database.js');
 app.use(bodyParser.urlencoded({ extended: true }));
 //const Sequelize = require('sequelize');
-//var mongoose = require("mongoose");
-//var Schema = mongoose.Schema;
+
+
 
 
  app.use(express.static("./public"));
@@ -36,12 +38,27 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
  });
 
- app.post("/dashboard", (req,res)=>{
-     res.sendFile(path.join(__dirname, "/public/nhtml/dashboard.html"))
+ //app.post("/dashboard", (req,res)=>{
+ //    res.sendFile(path.join(__dirname, "/public/nhtml/dashboard.html"))
 
- }); 
+ //}); 
 
- var port = process.env.PORT || 5000;
+ router.post("/register",(req,res)=>{
+
+  db.addUser(req.body).then(()=>{
+
+    res.redirect("/register");
+
+  }).catch((err)=>{
+
+    console.log("Error!");
+    res.redirect("/register")
+
+  });
+
+ });
+
+var port = process.env.PORT || 5000;
 app.listen(port);
 console.log('Listening on port ',  port);
 
