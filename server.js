@@ -1,48 +1,76 @@
 var express = require('express');
 var app     = express();
 var path    = require("path");
-c//onst mongoose = require('mongoose')
 const bodyParser = require('body-parser');
-//const User = require('./models/user');
+const mongoose = require('mongoose');
+const User = require('./models/user')
 app.use(bodyParser.urlencoded({ extended: true }));
-//const Sequelize = require('sequelize');
-app.use(express.static("./public"));
 
+/* set static directories
+app.use(express.static(path.join(__dirname, '/public')));
+
+app.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname+ '/html/test.html'))
+
+});
+app.get('/', function (req, res) {
+        res.sendFile(path.join(__dirname+ '/html/listing.html'))
+
+});
+        
+app.get('/', function (req, res) {
+        res.sendFile(path.join(__dirname+ '/html/register.html'))
+
+});
+        
+app.get('/', function (req, res) {
+res.sendFile(path.join(__dirname+ '/html/login.html'))
+
+});
+
+var port = process.env.PORT || 5000;
+app.listen(port);
+console.log('Listening on port ',  port);
+
+*/
+
+app.use(express.static("./public"));
 
 app.get('/', function (req, res) {
   
-  res.sendFile(path.join(__dirname, "/public/nhtml/ntest.html"))
+    res.sendFile(path.join(__dirname, "/public/nhtml/ntest.html"))
 
 });
 
 app.get('/nlisting', function (req, res) {
-
- res.sendFile(path.join(__dirname, "/public/nhtml/nlisting.html"))
+  
+    res.sendFile(path.join(__dirname, "/public/nhtml/nlisting.html"))
 
 });
 
 
 app.get('/nlogin', function (req, res) {
-
-   res.sendFile(path.join(__dirname, "/public/nhtml/nlogin.html"))
+  
+    res.sendFile(path.join(__dirname, "/public/nhtml/nlogin.html"))
 
 });
 
 
 app.get('/nreg', function (req, res) {
-
-   res.sendFile(path.join(__dirname, "/public/nhtml/nreg.html"))
-
-
+  
+    res.sendFile(path.join(__dirname, "/public/nhtml/nreg.html"))
 
 });
-/*
+
+var port = process.env.PORT || 5000;
+app.listen(port);
+console.log('Listening on port ',  port);
+
 
 function saveUser (usr) {
   const c = new User(usr)
   return c.save()
 }
-
 
 const url = 'mongodb+srv://dbUser:Jesus@2015@senecaweb.4tsdj.mongodb.net/Assignment?retryWrites=true&w=majority'
 
@@ -53,7 +81,7 @@ db.once('open', _ => {
 console.log('Database connected:', url)
 
 
-app.post('/register', (req, res) => {
+app.post('/dashboard', (req, res) => {
   saveUser(req.body)
   .then(result => {
       res.redirect('/')
