@@ -33,8 +33,10 @@ app.get('/nreg', function (req, res) {
 
    res.sendFile(path.join(__dirname, "/public/nhtml/nreg.html"))
 
-});
+   
 
+});
+/*
 
 function saveUser (usr) {
   const c = new User(usr)
