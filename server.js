@@ -9,22 +9,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("./public"));
 
 
-
-
-function saveUser (usr) {
-  const c = new User(usr)
-  return c.save()
-}
-
-
-const url = 'mongodb+srv://dbUser:Jesus@2015@senecaweb.4tsdj.mongodb.net/Assignment?retryWrites=true&w=majority'
-
-mongoose.connect(url, { useNewUrlParser: true,useUnifiedTopology: true });
-const db = mongoose.connection
-db.once('open', _ => {
-  
-console.log('Database connected:', url)
-
 app.get('/', function (req, res) {
   
   res.sendFile(path.join(__dirname, "/public/nhtml/ntest.html"))
@@ -50,6 +34,22 @@ app.get('/nreg', function (req, res) {
    res.sendFile(path.join(__dirname, "/public/nhtml/nreg.html"))
 
 });
+
+
+function saveUser (usr) {
+  const c = new User(usr)
+  return c.save()
+}
+
+
+const url = 'mongodb+srv://dbUser:Jesus@2015@senecaweb.4tsdj.mongodb.net/Assignment?retryWrites=true&w=majority'
+
+mongoose.connect(url, { useNewUrlParser: true,useUnifiedTopology: true });
+const db = mongoose.connection
+db.once('open', _ => {
+  
+console.log('Database connected:', url)
+
 
 app.post('/register', (req, res) => {
   saveUser(req.body)
