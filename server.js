@@ -1,47 +1,68 @@
 var express = require('express');
 var app     = express();
 var path    = require("path");
-var router = express.Router();
+const mongoose = require('mongoose')
 const bodyParser = require('body-parser');
-const db = require('./database.js');
+const User = require('./models/user');
 app.use(bodyParser.urlencoded({ extended: true }));
 //const Sequelize = require('sequelize');
+app.use(express.static("./public"));
 
 
 
 
- app.use(express.static("./public"));
+function saveUser (usr) {
+  const c = new User(usr)
+  return c.save()
+}
 
- app.get('/', function (req, res) {
+
+const url = 'mongodb+srv://dbUser:Jesus@2015@senecaweb.4tsdj.mongodb.net/Assignment?retryWrites=true&w=majority'
+
+mongoose.connect(url, { useNewUrlParser: true,useUnifiedTopology: true });
+const db = mongoose.connection
+db.once('open', _ => {
   
-    res.sendFile(path.join(__dirname, "/public/nhtml/ntest.html"))
+console.log('Database connected:', url)
 
- });
-
- app.get('/nlisting', function (req, res) {
+app.get('/', function (req, res) {
   
-   res.sendFile(path.join(__dirname, "/public/nhtml/nlisting.html"))
+  res.sendFile(path.join(__dirname, "/public/nhtml/ntest.html"))
 
- });
+});
+
+app.get('/nlisting', function (req, res) {
+
+ res.sendFile(path.join(__dirname, "/public/nhtml/nlisting.html"))
+
+});
 
 
- app.get('/nlogin', function (req, res) {
-  
-     res.sendFile(path.join(__dirname, "/public/nhtml/nlogin.html"))
+app.get('/nlogin', function (req, res) {
 
- });
+   res.sendFile(path.join(__dirname, "/public/nhtml/nlogin.html"))
+
+});
 
 
- app.get('/nreg', function (req, res) {
- 
-     res.sendFile(path.join(__dirname, "/public/nhtml/nreg.html"))
+app.get('/nreg', function (req, res) {
 
- });
+   res.sendFile(path.join(__dirname, "/public/nhtml/nreg.html"))
 
-app.post("/dashboard", (req,res)=>{
-    res.sendFile(path.join(__dirname, "/public/nhtml/dashboard.html"))
+});
 
-}); 
+app.post('/register', (req, res) => {
+  saveUser(req.body)
+  .then(result => {
+      res.redirect('/')
+  })
+  .catch(error => console.error(error))
+});
+
+
+
+
+})
 
 // router.post("/register", function (req,res){
 
@@ -49,9 +70,6 @@ app.post("/dashboard", (req,res)=>{
 
 //  });
 
-var port = process.env.PORT || 5000;
-app.listen(port);
-console.log('Listening on port ',  port);
 
 
 /*
