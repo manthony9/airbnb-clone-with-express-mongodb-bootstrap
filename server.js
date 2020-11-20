@@ -1,9 +1,9 @@
 var express = require('express');
 var app     = express();
 var path    = require("path");
-const mongoose = require('mongoose')
+c//onst mongoose = require('mongoose')
 const bodyParser = require('body-parser');
-const User = require('./models/user');
+//const User = require('./models/user');
 app.use(bodyParser.urlencoded({ extended: true }));
 //const Sequelize = require('sequelize');
 app.use(express.static("./public"));
@@ -33,7 +33,7 @@ app.get('/nreg', function (req, res) {
 
    res.sendFile(path.join(__dirname, "/public/nhtml/nreg.html"))
 
-   
+
 
 });
 /*
