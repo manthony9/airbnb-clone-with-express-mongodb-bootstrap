@@ -82,11 +82,13 @@ console.log('Database connected:', url)
 
 
 app.post('/dashboard', (req, res) => {
-  saveUser(req.body)
+  saveUser(
+    req.body)
   .then(result => {
       res.redirect('/')
   })
   .catch(error => console.error(error))
+  
 });
 
 

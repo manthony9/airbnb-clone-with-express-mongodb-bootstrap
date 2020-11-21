@@ -10,6 +10,7 @@ const userSchema = new Schema({
     dateofbirth: Number
 
  })
-
- module.exports = mongoose.model('User', userSchema)
+let User;
+User = mongoose.model('User', userSchema);
+module.exports = User;
 
