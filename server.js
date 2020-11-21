@@ -65,20 +65,23 @@ app.get('/nreg', function (req, res) {
 var port = process.env.PORT || 5000;
 app.listen(port);
 console.log('Listening on port ',  port);
+let Users;
 
-
-function saveUser (usr) {
-  const c = new User(usr)
-  return c.save()
-}
 
 const url = 'mongodb+srv://dbUser:Jesus@2015@senecaweb.4tsdj.mongodb.net/Assignment?retryWrites=true&w=majority'
+
+
 
 mongoose.connect(url, { useNewUrlParser: true,useUnifiedTopology: true });
 const db = mongoose.connection
 db.once('open', _ => {
-  
+Users = db.model("users", userSchema);
 console.log('Database connected:', url)
+
+function saveUser (usr) {
+  const c = new Users(usr)
+  return c.save()
+}
 
 
 app.post('/dashboard', (req, res) => {
