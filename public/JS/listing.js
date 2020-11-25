@@ -61,8 +61,6 @@ var b = document.createElement('div');
 b.id = 'wrapper';
 
 
-
-
 // b.innerHTML = cards.map(el =>
     
    
