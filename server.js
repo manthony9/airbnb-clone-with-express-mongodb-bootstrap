@@ -72,12 +72,11 @@ res.render('hom',{
 
 app.get('/lst', function (req, res) {
 
-
-  console.log("Is user admin" + req.session.user);
+ 
   User.getRoom().then((data) =>{
-  
+    console.log(req.session.user);
     res.render("lst", {
-        roomData: (data.length!=0 ? data : undefined),
+            roomData: (data.length!=0 ? data : undefined),
                layout:false,
                user: req.session.user
     })
@@ -93,6 +92,40 @@ app.get('/lgn', function (req, res) {
   res.render('lgn',{
     user: req.session.user,
     layout:false
+  });
+
+});
+
+
+app.get('/book',  ensureLogin, function (req, res) {
+  
+  res.render('checkout',{
+    user: req.session.user,
+    layout:false
+  });
+
+});
+
+
+app.post('/book', function (req, res) {
+  
+  const pri = req.body.pr;
+  const stdt = new Date(req.body.checkin);
+  const endt = new Date(req.body.checkout);
+  const days = (endt.getTime() - stdt.getTime());
+  const dayCal = (Math.ceil(days / (1000 * 3600 * 24)));
+  console.log(dayCal);
+  const total = pri * dayCal;
+
+  console.log(total);
+  
+  res.render('checkout',{
+    user: req.session.user,
+    layout:false,
+    start: req.body.checkin,
+    end: req.body.checkout,
+    price: pri,
+    tot: total
   });
 
 });
@@ -137,7 +170,7 @@ app.get('/admdash', ensureAdm, function (req, res) {
   //  validity:true
   //});
 
-  User.getRoom().then((data) =>{
+  User.getRoom(req.body).then((data) =>{
   
    
     res.render("admdash", {
