@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+    body {
+         min-width: 1000px;
+    }
+
+    
+    #book{
+
+        
+        min-width:100px;
+        min-height:50px;
+
+    }
+
+    #section2{
+
+    min-width:200vh;
+
+    }
+
+    #section1{
+      
+      min-width:150vh;
+    }
+
+    footer{
+      min-width:200vh;
+    }
+}
+
+  *{
+    font-family: 'Roboto Slab', serif;
+    }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display:grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-auto-rows: 70px 850px 500px 100px 350px;
+  
+  }
+
+  #title1{
+
+
+    color:#333;
+    font-size: 17px;
+    
+  
+  }
+  
+  #desc1{
+  
+    color:#333;
+    font-size: 16px;
+  
+  }
+
+  .navbar {
+    overflow: hidden;
+    background-color:#de4847;
+    grid-row:1;
+    grid-column: 1/7;
+    display:grid;
+    grid-template-columns: 100px 100px 100px 600px 600px 600px;
+    grid-template-rows: subgrid;
+    min-width:190vh;
+  }
+  
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    padding: 24px 16px;
+    text-decoration: none;
+
+  }
+  
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+  #section1{
+    grid-row:2;
+    grid-column: 1/7;
+    display:grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+    background-image: url("/images/pexels-emre-can-2079228\ \(1\).jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;  
+    min-width:200vh;
+    
+  }
+
+  #listHead{
+  margin-top:20%;
+  grid-column: 1;
+  color:white;
+  font-size: 2em;
+  text-align: center;
+  margin:auto;
+
+  }
+  
+  #formContainer{
+    background-color: white;
+    border-radius: 20px;
+    grid-row:3;
+    grid-column:3;
+    margin:auto;
+    text-align: left;
+    align-items: left;
+    padding:10px;
+    border:2px solid black;
+}
+  
+  #roomForm{
+  
+    align-items: left;
+  
+  }
+
+  #section2{
+
+    grid-row:3;
+    grid-column:1/7; 
+    min-width:200vh;
+    display:grid;
+    grid-template-columns: 1fr 1fr 500px 500px 500px 1fr 1fr;
+    grid-gap: 100px;
+    grid-auto-rows: 50px 550px 550px 50px;
+  
+  }
+
+  #book{
+
+    background-color:#de4847;
+    color:white;
+    border-radius:10px;
+    min-width:75px;
+
+  }
+
+
+  #one{
+
+    grid-row:2;
+    grid-column:3;
+    width:100%;
+    height:100%;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px #333;
+    transition: all 300ms ease;
+    
+  }
+
+  #one h3{
+
+   color:dimgrey;
+  
+  }
+
+#one:hover {
+transform: translateY(-10px);
+cursor: pointer;
+}
+
+#two{
+
+    
+    border-radius:15px;
+    grid-row:2;
+    grid-column:4;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px #333;
+    transition: all 300ms ease;
+
+}
+
+#two:hover {
+
+    transform: translateY(-10px);
+    cursor: pointer;
+
+}
+
+#two h3{
+
+  color:dimgrey;
+
+}
+
+#three{
+
+  
+    border-radius:15px;
+    grid-row:2;
+    grid-column:5;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px #333;
+    transition: all 300ms ease;
+
+}
+
+#three:hover {
+
+    transform: translateY(-10px);
+    cursor: pointer;
+
+}
+
+#three h3{
+
+  color:dimgrey;
+
+}
+
+#four{
+
+  
+    border-radius:15px;
+    grid-row:3;
+    grid-column:3;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px #333;
+    transition: all 300ms ease;
+
+}
+
+#four h3{
+
+  color:dimgrey;
+
+}
+
+
+#four:hover {
+
+    transform: translateY(-10px);
+    cursor: pointer;
+
+}
+
+#five{
+
+
+    border-radius:15px;
+    grid-row:3;
+    grid-column:4;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px #333;
+    transition: all 300ms ease;
+
+}
+
+#five:hover {
+transform: translateY(-10px);
+cursor: pointer;
+}
+
+#five h3{
+
+  color:dimgrey;
+
+}
+
+#six{ 
+
+  
+    border-radius:15px;
+    grid-row:3;
+    grid-column:5;
+    border-radius: 8px;
+    box-shadow: 3px 3px 3px #333;
+    transition: all 300ms ease;
+
+}
+
+#six:hover {
+transform: translateY(-10px);
+cursor: pointer;
+}
+
+
+#six h3{
+
+  color:dimgrey;
+
+}
+
+#room1{
+
+  border-radius:5px;
+
+}
+
+#hello{
+    
+    position: absolute;
+}
+
+
+footer{
+  background-color:#e5e5e5;
+  border-top:1px solid lightgrey; 
+  grid-row:5;
+  grid-column: 1/7;
+  min-width:190vh;
+  max-width:1000vh;
+  height:100%;
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows: repeat(3,1fr);
+
+} 
+
+
+#flista{
+
+color:darkgray;
+font-size: 2ch;
+list-style-type: none;
+grid-column:2;
+grid-row:2;
+transition: all 300ms ease;
+
+
+
+}
+
+#flista li{
+
+margin: 15px 0;
+
+}
+
+#flista:hover{
+
+color:black;
+cursor: pointer;
+
+}
+
+
+#flistb{
+
+color:darkgray;
+font-size:2ch;
+list-style-type: none;
+grid-column:3;
+grid-row:2;
+transition: all 300ms ease;
+
+
+
+}
+
+#flistb li{
+
+margin: 15px 0;
+
+}
+
+#flistb:hover{
+
+color:black;
+cursor: pointer;
+
+}
+
+
+#flistc{
+
+color:darkgray;
+font-size: 2ch;
+list-style-type: none;
+grid-column:4;
+grid-row:2;
+transition: all 300ms ease;
+
+
+
+}
+
+#flistc li{
+
+margin: 15px 0;
+
+}
+
+#flistc:hover{
+
+color:black;
+cursor: pointer;
+
+}

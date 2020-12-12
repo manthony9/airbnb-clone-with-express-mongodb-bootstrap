@@ -9,13 +9,18 @@
   "author": "Morris",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.5.3",
+    "client-sessions": "^0.8.0",
     "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
     "handlebars": "^4.7.6",
     "jquery": "^3.5.1",
     "js": "^0.1.0",
     "mongoose": "^5.10.15",
+    "multer": "^1.4.2",
     "node": "^14.15.1",
     "prettier": "^2.1.2"
   },

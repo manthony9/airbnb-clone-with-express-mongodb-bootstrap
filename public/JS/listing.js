@@ -1,11 +1,12 @@
 
 
-const cards = [
+module.exports = [
 {
     name: 'Entire Apartment * Lisbon',
     ppN: "$15 CAD/Per Night",
     desc: "Chiado Loft 7 with Patio!",
-    image: "",
+    image: "./images/room1.jpg",
+    imageID: "room1",
     id:"one"
 },
 
@@ -13,7 +14,8 @@ const cards = [
     name: 'Entire Apartment * Lisboa',
     ppN: "$15 CAD/Per Night",
     desc: "Chiado Loft 7 with Patio!",
-    image: "./images/Logo.png",
+    image: "./images/room2.jpg",
+    imageID: "room2",
     id:"two"
 },
 
@@ -21,7 +23,8 @@ const cards = [
     name: 'Entire Apartment * Lisbon',
     ppN: "$15 CAD/Per Night",
     desc: "Chiado Loft 7 with Patio!",
-    image: "./images/Logo.png",
+    image: "./images/room3.jpg",
+    imageID: "room3",
     id:"three"
 },
 
@@ -30,7 +33,8 @@ const cards = [
     name: 'Entire Apartment * New York',
     ppN: "$15 CAD/Per Night",
     desc: "Chiado Loft 7 with Patio!",
-    image: "./images/Logo.png",
+    image: "./images/room4.jpg",
+    imageID: "room4",
     id:"four"
 },
 
@@ -39,7 +43,8 @@ const cards = [
     name: 'Entire Apartment * London',
     ppN: "$15 CAD/Per Night",
     desc: "Chiado Loft 7 with Patio!",
-    image: "./images/Logo.png",
+    image: "./images/room5.jpg",
+    imageID: "room5",
     id:"five"
 },
 
@@ -47,18 +52,19 @@ const cards = [
     name: 'Entire Apartment * Toronto',
     ppN: "$15 CAD/Per Night",
     desc: "Chiado Loft 7 with Patio!",
-    image: "./images/Logo.png",
+    image: "./images/room6.webp",
+    imageID: "room6",
     id:"six"
 }
 
-]
+];
 
 
 
 
-var a = document.querySelector('#section2');
-var b = document.createElement('div');
-b.id = 'wrapper';
+//var a = document.querySelector('#section2');
+//var b = document.createElement('div');
+//b.id = 'wrapper';
 
 
 // b.innerHTML = cards.map(el =>
@@ -68,37 +74,37 @@ b.id = 'wrapper';
     
 // ).join(' ') ;
 
-b.innerHTML = cards.map(function(el){
+// b.innerHTML = cards.map(function(el){
 
-    if(el.id === "one"){
+//     if(el.id === "one"){
 
-        return  `<div id = ${el.id}><img id="room1" width="500" height="300" src="images/room1.jpg"><h3>${el.name}</h3><h1>${el.desc}</h1><h3>${el.ppN}</h3><button id="book">Book</button></div>`;
+//         return  `<div id = ${el.id}><img id="room1" width="500" height="300" src="images/room1.jpg"><h3>${el.name}</h3><h1>${el.desc}</h1><h3>${el.ppN}</h3><button id="book">Book</button></div>`;
 
-    } else if (el.id === "two") {
+//     } else if (el.id === "two") {
 
-        return `<div id = ${el.id}><img id="room1" width="500" height="300" src="images/room2.jpg"><h3>${el.name}</h3><h1>${el.desc}</h1><h3>${el.ppN}</h3><button id="book">Book</button></div>`;
+//         return `<div id = ${el.id}><img id="room1" width="500" height="300" src="images/room2.jpg"><h3>${el.name}</h3><h1>${el.desc}</h1><h3>${el.ppN}</h3><button id="book">Book</button></div>`;
 
-    } else if (el.id === "three") {
+//     } else if (el.id === "three") {
         
-        return `<div id = ${el.id}><img id="room1" width="500" height="300" src="images/room3.jpg"><h3>${el.name}</h3><h1>${el.desc}</h1><h3>${el.ppN}</h3><button id="book">Book</button></div>`;    
+//         return `<div id = ${el.id}><img id="room1" width="500" height="300" src="images/room3.jpg"><h3>${el.name}</h3><h1>${el.desc}</h1><h3>${el.ppN}</h3><button id="book">Book</button></div>`;    
 
-    } else if (el.id === "four") {
+//     } else if (el.id === "four") {
 
-        return `<div id = ${el.id}><img id="room1" width="500" height="300" src="images/room4.jpg"><h3>${el.name}</h3><h1>${el.desc}</h1><h3>${el.ppN}</h3><button id="book">Book</button></div>`;
+//         return `<div id = ${el.id}><img id="room1" width="500" height="300" src="images/room4.jpg"><h3>${el.name}</h3><h1>${el.desc}</h1><h3>${el.ppN}</h3><button id="book">Book</button></div>`;
 
-    } else if (el.id === "five") {
+//     } else if (el.id === "five") {
 
-        return `<div id = ${el.id}><img id="room1" width="500" height="300" src="images/room5.jpg"><h3>${el.name}</h3><h1>${el.desc}</h1><h3>${el.ppN}</h3><button id="book">Book</button></div>`;
+//         return `<div id = ${el.id}><img id="room1" width="500" height="300" src="images/room5.jpg"><h3>${el.name}</h3><h1>${el.desc}</h1><h3>${el.ppN}</h3><button id="book">Book</button></div>`;
 
-    } else if (el.id === "six") {
+//     } else if (el.id === "six") {
 
-        return `<div id = ${el.id}><img id="room1" width="500" height="300" src="images/room6.webp"><h3>${el.name}</h3><h1>${el.desc}</h1><h3>${el.ppN}</h3><button id="book">Book</button></div>`;
-    }
+//         return `<div id = ${el.id}><img id="room1" width="500" height="300" src="images/room6.webp"><h3>${el.name}</h3><h1>${el.desc}</h1><h3>${el.ppN}</h3><button id="book">Book</button></div>`;
+//     }
 
 
-}).join(' ');
+// }).join(' ');
 
-a.appendChild(b);
+//a.appendChild(b);
 
 
 

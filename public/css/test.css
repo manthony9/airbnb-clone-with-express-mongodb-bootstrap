@@ -33,18 +33,25 @@
   
   }
   
-  .navbar {
+  #nav-container{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+
+  .navbar #nav-container{
     overflow: hidden;
     background-color:#de4847;
     grid-row:1;
     grid-column: 1/7;
+    
     display:grid;
-    grid-template-columns: 100px 100px 100px 600px 600px 600px;
+    grid-template-columns: 100px 100px 100px 100px 400px 100px;
     grid-template-rows: subgrid;
     min-width:190vh;
   }
   
-  .navbar a {
+  .navbar #nav-container a {
     float: left;
     font-size: 16px;
     color: white;
@@ -54,7 +61,7 @@
 
   }
 
-  .navbar a:hover {
+  .navbar #nav-container a:hover {
     transform: translateY(-5px);
     cursor: pointer;
 

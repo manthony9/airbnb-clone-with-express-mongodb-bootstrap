@@ -40,7 +40,7 @@ body {
     grid-row:1;
     grid-column: 1/7;
     display:grid;
-    grid-template-columns: 100px 100px 100px 600px 600px 600px;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px;
     grid-template-rows: subgrid;
     min-width:190vh;
   }
@@ -75,7 +75,7 @@ body {
       grid-column: 1/7;
       display:grid;
       grid-template-columns: repeat(5,1fr);
-      grid-template-rows: 100px 100px 550px;
+      grid-template-rows: repeat(3, 1fr 1fr 2fr);
       background-image: url("/images/pexels-emre-can-2079228\ \(1\).jpg");
       background-repeat: no-repeat;
       background-size: cover;
@@ -83,6 +83,24 @@ body {
       min-width:190vh;
   }
 
+#formContainer{
+  background-color: white;
+  border-radius: 20px;
+  grid-row:3;
+  grid-column:3;
+ margin:auto;
+ text-align: left;
+  align-items: left;
+  padding:10px;
+}
+
+#myForm{
+
+  align-items: left;
+
+}
+
+/*
   #login{
 
       height:50%;
@@ -114,23 +132,6 @@ body {
     box-sizing: border-box;
   }
   
-  /* Set a style for all buttons */
-  button {
-    grid-row:2;
-    grid-column:3;
-    width:20%;
-    height:50%;
-    border-radius:30px;
-    color:#333;
-    font-size: 1.5em;
-    cursor: pointer;
-    border:solid 3px #333;
-    margin-left:0;
-  }
-  
-  button:hover {
-    opacity: 0.8;
-  }
   
   /* Extra styles for the cancel button */
   .cancelbtn {
@@ -242,7 +243,7 @@ body {
        width: 100%;
     }
   }
-
+*/
 /*form css ends*/
 
 #book{

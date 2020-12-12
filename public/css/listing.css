@@ -150,23 +150,35 @@ body {
   margin:auto;
 
   }
+  
+  #formContainer{
+    background-color: white;
+    border-radius: 20px;
+    grid-row:3;
+    grid-column:3;
+   margin:auto;
+   text-align: left;
+    align-items: left;
+    padding:10px;
+  }
+  
+  #myForm{
+  
+    align-items: left;
+  
+  }
 
   #section2{
 
     grid-row:3;
     grid-column:1/7; 
     min-width:200vh;
-  }
-
-  #section2 #wrapper{
-
     display:grid;
     grid-template-columns: 1fr 1fr 500px 500px 500px 1fr 1fr;
     grid-gap: 100px;
     grid-auto-rows: 50px 550px 550px 50px;
-    
+  
   }
-
 
   #book{
 
