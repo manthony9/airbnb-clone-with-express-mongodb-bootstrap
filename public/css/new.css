@@ -24,7 +24,7 @@ img{
   }
   .card-title i:hover{
     transform: scale(1.25) rotate(100deg); 
-    color:#18d4ca;
+    color:wheat;
     
   }
   .card:hover{
@@ -108,16 +108,25 @@ img{
   }  
   
   #login{
-      background-color: aquamarine;
+    background-color: aquamarine;
+  }
+
+  #section0{
+    height: 1000px;
+    background-color:wheat;
   }
 
   #section1{
-    background-color:aquamarine;
+    height:500px;
+    padding-top:50px;
+    background-color:white;
   }
 
   
   #section2{
-    background-color:aquamarine;
+    background-color:white;
+    height:500px;
+    padding-top:50px;
   }
 
   #roomForm{

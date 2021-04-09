@@ -56,11 +56,41 @@ module.exports.start = function(){
 module.exports.saveUser = function(usr) {
    
     
-    bcrypt.hash(usr.Add, 10, function(err, hash) {
-        usr.Add = hash;
-      });
-    const c = new Users(usr);
-    return c.save();
+    //bcrypt.hash(usr.Add, 10, function(err, hash) {
+    //    usr.Add = hash;
+     // });
+    
+     //const c = new Users(usr);
+     //return c.save();
+     
+     return new Promise((resolve, reject) => {
+    
+      
+        bcrypt.genSalt(10).then(salt=>bcrypt.hash(usr.Add,salt)).then(hash=>{
+
+            const newUs = new Users(usr);
+            newUs.Add = hash;
+            newUs.save((err)=>{
+
+                if(err){
+
+                    console.log(`Error!${err}`);
+                     reject(err);   
+                } else {
+                    
+                    resolve();
+                }
+
+
+            });
+        }).catch(err=>{
+
+            console.log(err);
+            reject("Error with bcrypt!");
+
+        });
+      
+    });
    
 }
 
@@ -175,16 +205,23 @@ module.exports.validateUser = function(usr){
    
     return new Promise((resolve, reject) =>{
         if(usr){
-            Users.findOne({Add: usr.psw}).exec()
+            console.log(usr);
+            Users.findOne({email: usr.uname}).exec()
             .then((foundUser) =>{
-                                
-                    if(foundUser){
-                         console.log(`Validated user: ${foundUser}`);
+                    bcrypt.compare(usr.psw, foundUser.Add)
+                .then((data)=>{
+                    if(data){
+
                         resolve(foundUser);
                     } else {
-                        reject("Passwords do not match!");
+
+                        reject("Incorrect Password!");
                         return;
+
                     }
+
+                });
+                   
             }).catch((err)=>{
                 console.log(`Validation error: ${err}`);
                 reject(err);

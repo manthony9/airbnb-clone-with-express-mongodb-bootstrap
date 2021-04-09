@@ -6,16 +6,21 @@
   }  
   
   #login{
-      background-color: aquamarine;
+      background-color: wheat;
+      color:white;
   }
 
   #section1{
-    background-color:aquamarine;
+    background-color:wheat;
+    min-height:750px;
+     color:white;
+     text-align: center;
   }
 
   
   #section2{
-    background-color:aquamarine;
+    background-color:wheat;
+   color:white;
   }
 
   .popup {
